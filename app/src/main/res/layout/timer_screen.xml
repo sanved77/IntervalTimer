@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context="com.sanved.intervaltimer.StartScreen">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvLaps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="70sp"
+            android:layout_marginBottom="25dp"
+            android:textColor="@color/white"
+            android:text="Laps : 0" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="90sp"
+            android:textColor="@color/white"
+            android:text="05:00" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabPause"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="50dp"
+            android:elevation="8dp"
+            android:layout_gravity="center_horizontal"
+            app:fabSize="normal"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/baseline_pause_black_24"/>
+
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabStop"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="25dp"
+        android:elevation="8dp"
+        android:layout_gravity="bottom|center_horizontal"
+        app:fabSize="normal"
+        android:visibility="invisible"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/baseline_close_black_24"/>
+
+</android.support.design.widget.CoordinatorLayout>
