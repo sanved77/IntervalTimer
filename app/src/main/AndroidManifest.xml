@@ -20,6 +20,11 @@
         <activity android:name=".TimerScreen"></activity>
         <service android:name=".TimerService"></service>
 
+        <receiver
+            android:name=".StopServiceReceiver"
+            android:enabled="true"
+            android:process=":remote" />
+
     </application>
 
 </manifest>

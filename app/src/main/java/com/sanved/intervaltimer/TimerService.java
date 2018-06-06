@@ -5,7 +5,6 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -108,7 +107,7 @@ public class TimerService extends Service {
         builder.setContentText("Click to open App");
         builder.setOngoing(true);
         builder.setCategory("service");
-        builder.addAction(R.drawable.baseline_play_arrow_black_18,"STOP", hide);
+        builder.setContentIntent(hide);
         builder.setContentIntent(PendingIntent.getActivity(this, 0, new Intent(this, TimerScreen.class), 0));
         return builder.build();
     }
@@ -163,16 +162,6 @@ public class TimerService extends Service {
             edit.putInt("secs", seconds);
             edit.commit();
 
-        }
-    }
-
-    public class StopServiceReceiver extends BroadcastReceiver {
-        public static final int REQUEST_CODE = 333;
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Intent service = new Intent(context, TimerService.class);
-            context.stopService(service);
         }
     }
 }
